@@ -1,1 +1,22 @@
+.badge-new {
+  width: 100%;
+  height: calc(100vh - 50px);
+  display: flex;
+  justify-content: center;
+  /*align-items: center;*/
+}
 
+.badge-new__badge {
+  width: calc(50% - 30px);
+  margin: 0 10px 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.badge-new__form {
+  width: calc(50% - 30px);
+  margin: 0 20px 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

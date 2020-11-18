@@ -1,0 +1,23 @@
+.badges {
+  width: 100%;
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.badges__link {
+  margin-top: 50px;
+  background-color: #f56767;
+  box-sizing: content-box;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+.badges__badgeslist {
+  margin-top: 20px;
+  max-width: 35rem;
+}

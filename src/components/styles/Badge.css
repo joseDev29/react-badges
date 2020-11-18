@@ -1,41 +1,66 @@
-.Badge {
-  background: none;
-  width: 500px;
-  margin: 10px;
-}
-
-.BadgeHeader {
+.badge {
   width: 100%;
-  height: 15%;
-  background-color: #322d66;
-  border-radius: 5px 5px 0px 0px;
+  height: 70vh;
 }
 
-.BadgeMain {
-  background: #f8f7fc;
-  padding: 5px;
+.badge__header {
+  width: 100%;
+  height: 30%;
+  background-color: #f56767;
+  border-radius: 10px 10px 0 0;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
-.BadgeFooter {
-  background: #889fcf;
-  padding: 5px;
-  border-radius: 0px 0px 5px 5px;
+.badge__header-title {
+  font-size: 3rem;
+  color: #ffffff;
 }
 
-.BadgeHeader-img {
-  width: 70%;
+.badge__header-logo {
+  height: 90%;
 }
 
-.BadgeMain-avatar {
-  max-width: 35%;
-  border-radius: 50%;
-  margin: 5px;
-}
-
-.BadgeMain-content {
+.badge__main {
+  width: 100%;
+  height: 55%;
   display: flex;
-  flex-direction: column;
-  margin-left: 5px;
+  flex-direction: row;
+  align-items: center;
+  background: #ffffff;
+}
+
+.badge__main-avatar {
+  max-height: 90%;
+  border-radius: 50%;
+  margin: 0px 10px;
+}
+
+.badge__main-content {
+  margin-left: 20px;
+}
+
+.badge__main-content-name {
+  font-size: 2.4rem;
+}
+
+.badge__main-content-description {
+  font-size: 1.6rem;
+}
+
+.badge__main-content-nickname {
+  font-size: 1.2rem;
+}
+
+.badge__footer {
+  width: 100%;
+  height: 15%;
+  background-color: #d9d7d7;
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
 }

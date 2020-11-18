@@ -1,0 +1,32 @@
+.notfound {
+  width: 100%;
+  height: calc(100vh - 50px);
+  display: flex;
+  align-items: center;
+  /*justify-content: center;*/
+  flex-direction: column;
+}
+
+.notfound__text {
+  margin-top: 50px;
+  font-size: 3rem;
+}
+
+.notfound__img {
+  max-height: 50vh;
+}
+
+.notfound__links {
+  margin-top: 50px;
+}
+
+.notfound__links-item {
+  margin: 0 10px;
+  background-color: #f56767;
+  box-sizing: content-box;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+}

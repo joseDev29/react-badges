@@ -1,0 +1,37 @@
+.badgeslist {
+  background-color: #d9d7d7;
+  padding: 10px 10px 10px 10px;
+  border-radius: 10px;
+}
+
+.badgeslist__title {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.badgeslist__li {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+  background-color: #edebeb;
+  padding: 10px;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.badgeslist__li-img {
+  border-radius: 50%;
+  height: 90%;
+}
+
+.badgeslist__li-content {
+  margin-left: 15px;
+}
+
+.badgeslist__li-content-description {
+  font-size: 0.95rem;
+}
+
+.badgeslist__li-content-nickname {
+  font-size: 0.85rem;
+}

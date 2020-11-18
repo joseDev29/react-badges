@@ -1,0 +1,22 @@
+.navbar {
+  height: 50px;
+  background-color: #5cc8f2;
+}
+
+.navbar__link {
+  display: inline-flex;
+  padding: 2px;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navbar__link-img {
+  margin: 0 0 0 5px;
+  height: 45px;
+}
+
+.navbar__link-span {
+  margin: 0 5px;
+  color: #ffffff;
+  font-size: 25px;
+}
