@@ -4,49 +4,98 @@ import BadgesList from "../components/BadgesList";
 import "./styles/Badges.css";
 
 class Badges extends React.Component {
-  state = {
-    data: [
-      {
-        id: "2de30c42-9deb-40fc-a41f-05e62b5939a7",
-        firstName: "Annie",
-        lastName: "Leonhart",
-        email: "annie.leon@gmail.com",
-        description: "Fontend Developer",
-        nickname: "annieLeon97",
-        avatarUrl:
-          "https://www.gravatar.com/avatar/f63a9c45aca0e7e7de0782a6b1dff40b?d=identicon",
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      nextPage: 1,
+      loading: true,
+      error: null,
+      data: {
+        info: {},
+        results: [],
       },
-      {
-        id: "d00d3614-101a-44ca-b6c2-0be075aeed3d",
-        firstName: "Killua",
-        lastName: "Zoldyck",
-        email: "killuZ@hotmail.com",
-        description: "Architec",
-        nickname: "kylluZoldyck29",
-        avatarUrl:
-          "https://www.gravatar.com/avatar/d57a8be8cb9219609905da25d5f3e50a?d=identicon",
-      },
-      {
-        id: "63c03386-33a2-4512-9ac1-354ad7bec5e9",
-        firstName: "Edward",
-        lastName: "Elrick",
-        email: "edofmab@hotmail.com",
-        description: "Alchemist",
-        nickname: "edoElrick56",
-        avatarUrl:
-          "https://www.gravatar.com/avatar/e74e87d40e55b9ff9791c78892e55cb7?d=identicon",
-      },
-    ],
+    };
+  }
+
+  componentDidMount() {
+    console.log("Se montará el componente");
+    this.fetchCharacters();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log("Se actualizará el componente");
+    console.log("prev props and state", {
+      prevProps: prevProps,
+      prevState: prevState,
+    });
+
+    console.log("actual props and state", {
+      props: this.props,
+      state: this.state,
+    });
+  }
+
+  componentWillUnmount() {
+    console.log("Se desmontará el componente");
+  }
+
+  fetchCharacters = async () => {
+    this.setState({
+      loading: true,
+      error: null,
+    });
+    try {
+      const response = await fetch(
+        `https://rickandmortyapi.com/api/character?page=${this.state.nextPage}`
+      );
+
+      if (response.ok) {
+        const data = await response.json();
+        this.setState({
+          loading: false,
+          data: {
+            info: data.info,
+            results: [].concat(this.state.data.results, data.results),
+          },
+          nextPage: this.state.nextPage + 1,
+        });
+      } else {
+        throw new Error("Data no encontrada");
+      }
+    } catch (error) {
+      this.setState({
+        loading: false,
+        error: error,
+      });
+    }
   };
+
   render() {
+    if (this.state.error) {
+      return `${this.state.error}`;
+    }
+
     return (
       <div className="badges">
+        {this.state.loading && <h1>Loading</h1>}
         <Link to="/badges/new" className="badges__link">
           New Badge
         </Link>
+
         <div className="badges__badgeslist">
-          <BadgesList badges={this.state.data} />
+          <BadgesList badges={this.state.data.results} />
         </div>
+
+        {!this.state.loading && (
+          <button
+            type="button"
+            className="badges__link"
+            onClick={() => this.fetchCharacters()}
+          >
+            Loads more...
+          </button>
+        )}
       </div>
     );
   }

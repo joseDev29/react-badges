@@ -21,7 +21,7 @@
 
 .badgeslist__li-img {
   border-radius: 50%;
-  height: 90%;
+  max-height: 60px;
 }
 
 .badgeslist__li-content {

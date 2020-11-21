@@ -9,16 +9,14 @@ class BadgesList extends React.Component {
         {this.props.badges.map((badge) => {
           return (
             <li key={badge.id} className="badgeslist__li">
-              <img src={badge.avatarUrl} className="badgeslist__li-img" />
+              <img src={badge.image} className="badgeslist__li-img" />
               <div className="badgeslist__li-content">
-                <h3 className="badgeslist__li-content-name">
-                  {badge.firstName} {badge.lastName}
-                </h3>
+                <h3 className="badgeslist__li-content-name">{badge.name}</h3>
                 <p className="badgeslist__li-content-description">
-                  {badge.description}
+                  {badge.species}
                 </p>
                 <p className="badgeslist__li-content-nickname">
-                  @{badge.nickname}
+                  {badge.status}
                 </p>
               </div>
             </li>
