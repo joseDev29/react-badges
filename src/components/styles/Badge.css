@@ -1,15 +1,12 @@
 .badge {
   width: 100%;
-  height: 70vh;
 }
 
 .badge__header {
   width: 100%;
-  height: 30%;
   background-color: #f56767;
   border-radius: 10px 10px 0 0;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
@@ -20,47 +17,54 @@
 }
 
 .badge__header-logo {
-  height: 90%;
+  width: 30%;
+  min-width: 7rem;
 }
 
 .badge__main {
   width: 100%;
-  height: 55%;
   display: flex;
-  flex-direction: row;
   align-items: center;
+  padding: 0.5rem;
   background: #ffffff;
 }
 
 .badge__main-avatar {
-  max-height: 90%;
+  width: 30%;
+  min-width: 8rem;
   border-radius: 50%;
-  margin: 0px 10px;
+  margin: 0 0.5rem;
 }
 
 .badge__main-content {
-  margin-left: 20px;
+  padding: 0 0.5rem;
 }
 
 .badge__main-content-name {
-  font-size: 2.4rem;
+  display: block;
+  width: 100%;
+  font-size: 2rem;
 }
 
 .badge__main-content-description {
-  font-size: 1.6rem;
+  display: block;
+  width: 100%;
+  font-size: 1.5rem;
 }
 
 .badge__main-content-nickname {
+  display: block;
+  width: 100%;
   font-size: 1.2rem;
 }
 
 .badge__footer {
   width: 100%;
-  height: 15%;
+  padding: 1rem;
   background-color: #d9d7d7;
   border-radius: 0 0 10px 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }

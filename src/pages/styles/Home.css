@@ -1,20 +1,21 @@
-.home-container {
+.home {
   width: 100%;
   height: calc(100vh - 50px);
-  display: flex;
-  align-items: center;
-  /*justify-content: center;*/
-  flex-direction: column;
+  padding: 0 0 2rem 0;
+  text-align: center;
+  overflow-y: scroll;
 }
 
 .home__img {
-  margin-top: 20px;
-  max-height: 45%;
+  width: 50%;
+  min-width: 15rem;
+  margin: 0 auto;
 }
 
 .home-text {
-  text-align: center;
-  font-size: 1.5rem;
+  width: 90%;
+  margin: auto;
+  font-size: 2rem;
   color: #ffffff;
 }
 
@@ -23,12 +24,12 @@
 }
 
 .home-links-item {
-  margin: 0 10px;
+  margin: 0 1rem;
   background-color: #f56767;
   box-sizing: content-box;
-  padding: 10px;
-  border-radius: 5px;
+  padding: 1rem;
+  border-radius: 0.5rem;
   text-decoration: none;
   color: #ffffff;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }

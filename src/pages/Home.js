@@ -5,7 +5,7 @@ import "./styles/Home.css";
 
 function Home() {
   return (
-    <div className="home-container">
+    <div className="home">
       <img src={homeLogo} className="home__img" />
       <div className="home-text">
         <h1>Welcome to an application</h1>

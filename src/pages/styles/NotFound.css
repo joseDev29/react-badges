@@ -1,32 +1,32 @@
 .notfound {
   width: 100%;
   height: calc(100vh - 50px);
-  display: flex;
-  align-items: center;
-  /*justify-content: center;*/
-  flex-direction: column;
+  padding: 0 0 2rem 0;
+  overflow-y: scroll;
+  text-align: center;
 }
 
 .notfound__text {
-  margin-top: 50px;
-  font-size: 3rem;
+  margin-top: 5rem;
+  font-size: 4rem;
 }
 
 .notfound__img {
-  max-height: 50vh;
+  width: 50%;
+  min-width: 15rem;
 }
 
 .notfound__links {
-  margin-top: 50px;
+  margin-top: 3rem;
 }
 
 .notfound__links-item {
-  margin: 0 10px;
+  margin: 0 1rem;
   background-color: #f56767;
   box-sizing: content-box;
-  padding: 10px;
+  padding: 1rem;
   border-radius: 5px;
   text-decoration: none;
   color: #ffffff;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }

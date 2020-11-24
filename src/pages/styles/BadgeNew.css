@@ -1,22 +1,17 @@
 .badge-new {
   width: 100%;
   height: calc(100vh - 50px);
-  display: flex;
-  justify-content: center;
-  /*align-items: center;*/
+  overflow-y: scroll;
+  padding: 0 0 2rem 0;
 }
 
 .badge-new__badge {
-  width: calc(50% - 30px);
-  margin: 0 10px 0 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 2rem;
 }
 .badge-new__form {
-  width: calc(50% - 30px);
-  margin: 0 20px 0 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 2rem;
 }

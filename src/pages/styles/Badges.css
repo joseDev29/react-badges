@@ -1,23 +1,26 @@
 .badges {
   width: 100%;
   height: calc(100vh - 50px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
+  overflow-y: scroll;
+  padding: 0 0 2rem 0;
 }
 
 .badges__link {
-  margin-top: 50px;
+  display: inline-block;
+  margin: 2rem 0 1rem;
   background-color: #f56767;
-  box-sizing: content-box;
-  padding: 10px;
-  border-radius: 5px;
-  text-decoration: none;
+  width: 25%;
+  min-width: 7rem;
+  font-size: 2rem;
+  padding: 0.5rem 0;
+  border: none;
+  border-radius: 10px;
   color: #ffffff;
-  font-size: 1.2rem;
+  text-decoration: none;
 }
 
 .badges__badgeslist {
-  margin-top: 20px;
-  max-width: 35rem;
+  width: 90%;
+  margin: auto;
 }

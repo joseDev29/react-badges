@@ -45,6 +45,7 @@ class Badges extends React.Component {
       loading: true,
       error: null,
     });
+
     try {
       const response = await fetch(
         `https://rickandmortyapi.com/api/character?page=${this.state.nextPage}`
@@ -93,7 +94,7 @@ class Badges extends React.Component {
             className="badges__link"
             onClick={() => this.fetchCharacters()}
           >
-            Loads more...
+            more...
           </button>
         )}
       </div>
