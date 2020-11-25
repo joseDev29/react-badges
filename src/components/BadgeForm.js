@@ -13,15 +13,15 @@ class BadgeForm extends React.Component {
     console.log("Hubo un click");
   };
 
-  handleSubmit = (e) => {
+  /*handleSubmit = (e) => {
     e.preventDefault();
     console.log(this.state);
-  };
+  };*/
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className="badge-form">
-        <h3 className="badge-form__title">Sign up</h3>
+      <form className="badge-form" onSubmit={this.props.onSubmit}>
+        <h3 className="badge-form__title">{this.props.formTitle}</h3>
         <label className="badge-form__label">First Name</label>
         <input
           onChange={this.props.onChange}
@@ -63,20 +63,24 @@ class BadgeForm extends React.Component {
         />
 
         <div className="badge-form__btns">
-          <button
-            type="button"
-            onClick={this.handleClick}
-            className="badge-form__btns-item"
-          >
-            Save
-          </button>
+          <button className="badge-form__btns-item">Save</button>
           <button className="badge-form__btns-item" type="reset">
             Reset
           </button>
         </div>
+        {this.props.error && <h1>{`${this.props.error}`}</h1>}
       </form>
     );
   }
 }
 
 export default BadgeForm;
+/*
+<button
+            type="button"
+            onClick={this.handleClick}
+            className="badge-form__btns-item"
+          >
+            Save
+          </button>
+*/

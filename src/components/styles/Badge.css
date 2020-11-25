@@ -17,13 +17,14 @@
 }
 
 .badge__header-logo {
-  width: 30%;
+  width: 20%;
   min-width: 7rem;
 }
 
 .badge__main {
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   padding: 0.5rem;
   background: #ffffff;
@@ -31,40 +32,40 @@
 
 .badge__main-avatar {
   width: 30%;
-  min-width: 8rem;
+  min-width: 10rem;
   border-radius: 50%;
-  margin: 0 0.5rem;
 }
 
 .badge__main-content {
-  padding: 0 0.5rem;
+  text-align: center;
+  margin: 1rem 0;
 }
 
 .badge__main-content-name {
   display: block;
   width: 100%;
-  font-size: 2rem;
+  font-size: 3.5rem;
 }
 
 .badge__main-content-description {
   display: block;
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
 }
 
 .badge__main-content-nickname {
   display: block;
   width: 100%;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
 }
 
 .badge__footer {
   width: 100%;
-  padding: 1rem;
+  padding: 2rem;
   background-color: #d9d7d7;
   border-radius: 0 0 10px 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 }

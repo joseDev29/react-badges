@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import BadgesList from "../components/BadgesList";
+import PageLoading from "../components/PageLoading";
+import PageError from "../components/PageError";
 import "./styles/Badges.css";
+import api from "../api";
 
 class Badges extends React.Component {
-  constructor(props) {
+  /*constructor(props) {
     super(props);
 
     this.state = {
@@ -16,11 +19,23 @@ class Badges extends React.Component {
         results: [],
       },
     };
+  }*/
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      loading: true,
+      error: null,
+      data: undefined,
+    };
   }
 
   componentDidMount() {
     console.log("Se montará el componente");
-    this.fetchCharacters();
+    this.fetchData();
+    //this.fetchCharacters();
+    this.intervalId = setInterval(this.fetchData, 5000);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -38,9 +53,10 @@ class Badges extends React.Component {
 
   componentWillUnmount() {
     console.log("Se desmontará el componente");
+    clearInterval(this.intervalId);
   }
 
-  fetchCharacters = async () => {
+  /*fetchCharacters = async () => {
     this.setState({
       loading: true,
       error: null,
@@ -70,25 +86,46 @@ class Badges extends React.Component {
         error: error,
       });
     }
+  };*/
+
+  fetchData = async () => {
+    this.setState({ loading: true, error: null });
+
+    try {
+      const data = await api.badges.list();
+      console.log("data: ", data.length);
+      this.setState({ loading: false, data: data });
+    } catch (error) {
+      this.setState({ loading: false, error: error });
+    }
   };
 
   render() {
     if (this.state.error) {
-      return `${this.state.error}`;
+      return <PageError error={this.state.error} />;
     }
-
+    if (this.state.loading && !this.state.data) {
+      return <PageLoading />;
+    }
     return (
       <div className="badges">
-        {this.state.loading && <h1>Loading</h1>}
         <Link to="/badges/new" className="badges__link">
           New Badge
         </Link>
 
         <div className="badges__badgeslist">
-          <BadgesList badges={this.state.data.results} />
+          <BadgesList badges={this.state.data} />
+          {this.state.loading && <h1>Loading...</h1>}
         </div>
+      </div>
+    );
+  }
+}
 
-        {!this.state.loading && (
+export default Badges;
+
+/*
+{!this.state.loading && (
           <button
             type="button"
             className="badges__link"
@@ -97,9 +134,8 @@ class Badges extends React.Component {
             more...
           </button>
         )}
-      </div>
-    );
-  }
-}
+*/
 
-export default Badges;
+/* 
+{this.state.loading && <h1>Loading</h1>}
+*/

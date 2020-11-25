@@ -1,14 +1,15 @@
 import React from "react";
-import "./styles/BadgeNew.css";
+import "./styles/BadgeEdit.css";
 import Badge from "../components/Badge";
 import BadgeForm from "../components/BadgeForm";
 import PageLoading from "../components/PageLoading";
 import api from "../api";
 import avatar from "../images/avatar.svg";
 
-class BadgeNew extends React.Component {
+class BadgeEdit extends React.Component {
   state = {
-    loading: false,
+    loadingPage: true,
+    loadingForm: false,
     error: null,
     form: {
       firstName: "",
@@ -16,6 +17,30 @@ class BadgeNew extends React.Component {
       nickname: "",
       description: "",
     },
+  };
+
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  fetchData = async () => {
+    this.setState({ loadingPage: true, error: null });
+
+    try {
+      const data = await api.badges.read(this.props.match.params.badgeId);
+
+      this.setState({
+        loadingPage: false,
+        form: {
+          firstName: data.firstName,
+          lastName: data.lastName,
+          nickname: data.twitter,
+          description: data.jobTitle,
+        },
+      });
+    } catch (error) {
+      this.setState({ loadingPage: false, error: error });
+    }
   };
 
   handleChange = (e) => {
@@ -36,9 +61,9 @@ class BadgeNew extends React.Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    this.setState({ loading: true, error: null });
+    this.setState({ loadingForm: true, error: null });
     try {
-      await api.badges.create({
+      await api.badges.update(this.props.match.params.badgeId, {
         id: `${this.getRandomInt(104544, 2345765)}`,
         firstName: this.state.form.firstName,
         lastName: this.state.form.lastName,
@@ -46,10 +71,10 @@ class BadgeNew extends React.Component {
         twitter: this.state.form.nickname,
         avatarUrl: avatar,
       });
-      this.setState({ loading: false });
+      this.setState({ loadingForm: false });
       this.props.history.push("/badges");
     } catch (error) {
-      this.setState({ loading: false, error: error });
+      this.setState({ loadingForm: false, error: error });
     }
   };
 
@@ -58,10 +83,13 @@ class BadgeNew extends React.Component {
   };
 
   render() {
+    if (this.state.loadingPage) {
+      return <PageLoading />;
+    }
     return (
       <>
-        <div className="badge-new">
-          <div className="badge-new__badge">
+        <div className="badge-edit">
+          <div className="badge-edit__badge">
             <Badge
               name={this.state.form.firstName || "Fist Name"}
               lastName={this.state.form.lastName || "Last Name"}
@@ -71,17 +99,17 @@ class BadgeNew extends React.Component {
               user={this.state.form.nickname || "@nickname"}
             />
           </div>
-          <div className="badge-new__form">
-            {!this.state.loading && (
+          <div className="badge-edit__form">
+            {!this.state.loadingForm && (
               <BadgeForm
                 onChange={this.handleChange}
                 onSubmit={this.handleSubmit}
-                formTitle={"Sign Up"}
+                formTitle={"Edit Badge"}
                 formValues={this.state.form}
                 error={this.state.error}
               />
             )}
-            {this.state.loading && <PageLoading />}
+            {this.state.loadingForm && <PageLoading />}
           </div>
         </div>
       </>
@@ -89,4 +117,4 @@ class BadgeNew extends React.Component {
   }
 }
 
-export default BadgeNew;
+export default BadgeEdit;

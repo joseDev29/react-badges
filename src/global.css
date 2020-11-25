@@ -10,10 +10,10 @@ html {
 }
 body {
   overflow: hidden;
+  background-color: #c6dff5;
+  background-image: url("./images/stars.svg");
 }
 #app {
   width: 100%;
   height: 100%;
-  background-color: #c6dff5;
-  background-image: url("./images/stars.svg");
 }

@@ -1,4 +1,4 @@
-.badge-new {
+.badge-edit {
   width: 100%;
   height: calc(100vh - 50px);
   overflow-y: scroll;
@@ -8,11 +8,11 @@
   align-items: center;
 }
 
-.badge-new__badge {
+.badge-edit__badge {
   width: 90%;
   margin-top: 2rem;
 }
-.badge-new__form {
+.badge-edit__form {
   width: 90%;
   margin-top: 2rem;
 }

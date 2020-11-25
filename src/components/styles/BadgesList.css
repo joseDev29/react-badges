@@ -3,14 +3,17 @@
   background-color: #d9d7d7;
   padding: 1rem;
   border-radius: 10px;
+  list-style: none;
 }
 
 .badgeslist__title {
-  font-size: 3rem;
+  font-size: 3.5rem;
   text-align: center;
 }
-
 .badgeslist__li {
+  width: 100%;
+}
+.badgeslist__li-link {
   width: 100%;
   display: flex;
   margin-top: 0.5rem;
@@ -19,11 +22,13 @@
   border-radius: 10px;
   align-items: center;
   text-align: start;
+  text-decoration: none;
+  color: #1f1f1f;
 }
 
 .badgeslist__li-img {
-  width: 25%;
-  min-width: 10rem;
+  width: 20%;
+  min-width: 8rem;
   border-radius: 50%;
 }
 
@@ -31,12 +36,12 @@
   margin-left: 1rem;
 }
 .badgeslist__li-content-name {
-  font-size: 2rem;
+  font-size: 2.3rem;
 }
 .badgeslist__li-content-description {
-  font-size: 1.5rem;
+  font-size: 1.9rem;
 }
 
 .badgeslist__li-content-nickname {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
