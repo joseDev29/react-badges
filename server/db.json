@@ -45,22 +45,6 @@
       "avatarUrl": "https://www.gravatar.com/avatar/00e35de53a06a655fe5b6ac8b96bdb84?d=identicon"
     },
     {
-      "id": "1678960",
-      "firstName": "Pepe",
-      "lastName": "Guama",
-      "jobTitle": "Vividor",
-      "twiter": "@pepegua",
-      "avatarUrl": "/static/media/avatar.ee1c98cb.svg"
-    },
-    {
-      "id": "2049521",
-      "firstName": "Pepito",
-      "lastName": "Perez",
-      "jobTitle": "Backend Developer",
-      "twiter": "@pepitoPep24",
-      "avatarUrl": "/static/media/avatar.ee1c98cb.svg"
-    },
-    {
       "id": "1805598",
       "firstName": "Killua",
       "lastName": "Zoldyck",
@@ -90,22 +74,6 @@
       "lastName": "Ortiz Castrillon",
       "jobTitle": "Backend Developer",
       "twitter": "@joseDeveloper",
-      "avatarUrl": "/static/media/avatar.ee1c98cb.svg"
-    },
-    {
-      "id": "996686",
-      "firstName": "Pepito",
-      "lastName": "Guamitas",
-      "jobTitle": "fdgfdgf",
-      "twitter": "dgffgfgfgffds",
-      "avatarUrl": "/static/media/avatar.ee1c98cb.svg"
-    },
-    {
-      "id": "1353300",
-      "firstName": "MyName",
-      "lastName": "MyLastname",
-      "jobTitle": "MyJobTitle",
-      "twitter": "@myNicknames",
       "avatarUrl": "/static/media/avatar.ee1c98cb.svg"
     }
   ]

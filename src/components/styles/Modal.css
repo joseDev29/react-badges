@@ -1,0 +1,26 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.modal__close-top {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto;
+  border: none;
+  border-radius: 50%;
+  background-color: #f56767;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.modal__container {
+  width: 90%;
+  margin: 1.5rem auto;
+}

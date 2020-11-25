@@ -5,7 +5,23 @@
   border-radius: 10px;
   list-style: none;
 }
-
+.badgeslist__search {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0 1.5rem;
+}
+.badgeslist__search label {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0 0 0.5rem;
+}
+.badgeslist__search input {
+  border: none;
+  border-radius: 10px;
+  height: 3.5rem;
+  font-size: 3rem;
+  padding-left: 0.5rem;
+}
 .badgeslist__title {
   font-size: 3.5rem;
   text-align: center;

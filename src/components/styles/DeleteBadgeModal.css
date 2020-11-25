@@ -1,0 +1,27 @@
+.delete-badge-modal {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffffff;
+  text-align: center;
+  padding: 1rem;
+}
+
+.delete-badge-modal h1 {
+  font-size: 3.5rem;
+}
+
+.delete-badge-modal p {
+  font-size: 2.5rem;
+}
+
+.delete-badge-modal button {
+  margin: 1rem 1rem;
+  width: 10rem;
+  padding: 0.5rem 0;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.8rem;
+  background-color: #f56767;
+  color: #ffffff;
+}
